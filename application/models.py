@@ -24,7 +24,6 @@ class Empreendimento(models.Model):
 
 	nome = models.CharField(max_length=200)
 	endereco = models.CharField(max_length=400)
-	capa = models.ImageField(upload_to='empreendimentos/capas/')
 	icone = models.ImageField(upload_to='empreendimentos/icones/')
 	entrega = models.DateField(auto_now=False)
 	comentarios = models.TextField(null=True, blank=True)
@@ -70,7 +69,6 @@ class Casa(models.Model):
 	estagio_da_obra = models.IntegerField(
 		choices = ESTAGIO_CASA
 	)
-	capa = models.ImageField(upload_to='casas/capas/')
 	icone = models.ImageField(upload_to='casas/icones/')
 	data_de_entrega = models.DateField(auto_now=False)
 	metragem_do_terreno = models.DecimalField(max_digits=20, decimal_places=2)
