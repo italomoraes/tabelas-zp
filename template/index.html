@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR"
       dir="ltr">
@@ -19,40 +20,40 @@
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="assets/vendor/perfect-scrollbar.css"
+              href="{% static 'vendor/perfect-scrollbar.css'%}"
               rel="stylesheet">
 
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="assets/css/material-icons.css"
+              href="{% static '/css/material-icons.css'%}"
               rel="stylesheet">
 
         <!-- Font Awesome Icons -->
         <link type="text/css"
-              href="assets/css/fontawesome.css"
+              href="{% static '/css/fontawesome.css'%}"
               rel="stylesheet">
 
         <!-- Preloader -->
         <link type="text/css"
-              href="assets/vendor/spinkit.css"
+              href="{% static '/vendor/spinkit.css'%}"
               rel="stylesheet">
         <link type="text/css"
-              href="assets/css/preloader.css"
+              href="{% static '/css/preloader.css'%}"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="assets/css/app.css"
+              href="{% static '/css/app.css'%}"
               rel="stylesheet">
 
         <!-- Dark Mode CSS (optional) -->
         <link type="text/css"
-              href="assets/css/dark-mode.css"
+              href="{% static '/css/dark-mode.css'%}"
               rel="stylesheet">
 
         <!-- Vector Maps -->
         <link type="text/css"
-              href="assets/vendor/jqvmap/jqvmap.min.css"
+              href="{% static '/vendor/jqvmap/jqvmap.min.css'%}"
               rel="stylesheet">
 
     </head>
@@ -106,7 +107,7 @@
                             <div class="col-xl-3 col-md-6 card-group-row__col">
                                 <div class="card card-group-row__card">
                                     <div class="card-body d-flex flex-column align-items-center">
-                                        <img src="assets/images/emp/fotoemp1.png" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
+                                        <img src="{% static '/images/emp/fotoemp1.png'%}" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
                                                 <p class="mb-0"><strong>Cazeca</strong></p>
@@ -125,7 +126,7 @@
                             <div class="col-xl-3 col-md-6 card-group-row__col">
                                 <div class="card card-group-row__card">
                                     <div class="card-body d-flex flex-column align-items-center">
-                                        <img src="assets/images/emp/fotoemp1.png" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
+                                        <img src="{% static '/images/emp/fotoemp1.png'%}" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
                                                 <p class="mb-0"><strong>Cazeca</strong></p>
@@ -143,7 +144,7 @@
                     <div class="container-fluid page__container page-section d-flex flex-column">
                         <p class="text-70 brand mb-24pt">
                             <img class="brand-icon"
-                                 src="assets/images/logo/black-70@2x.png"
+                                 src="{% static '/images/logo/black-70@2x.png'%}"
                                  width="30"
                                  alt="Huma"> ZP Empreendimentos
                         </p>
@@ -164,7 +165,7 @@
                         <a href="index.html"
                            class="sidebar-brand ">
                             <img class="sidebar-brand-icon"
-                                 src="assets/images/logo/accent-teal-100@2x.png"
+                                 src="{% static '/images/logo/accent-teal-100@2x.png'%}"
                                  alt="Huma">
                             <span>ZP Corretor</span>
                         </a>
@@ -220,60 +221,60 @@
         <!-- // END drawer-layout -->
 
         <!-- jQuery -->
-        <script src="assets/vendor/jquery.min.js"></script>
+        <script src="{% static '/vendor/jquery.min.js'%}"></script>
 
         <!-- Bootstrap -->
-        <script src="assets/vendor/popper.min.js"></script>
-        <script src="assets/vendor/bootstrap.min.js"></script>
+        <script src="{% static '/vendor/popper.min.js'%}"></script>
+        <script src="{% static '/vendor/bootstrap.min.js'%}"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+        <script src="{% static '/vendor/perfect-scrollbar.min.js'%}"></script>
 
         <!-- DOM Factory -->
-        <script src="assets/vendor/dom-factory.js"></script>
+        <script src="{% static '/vendor/dom-factory.js'%}"></script>
 
         <!-- MDK -->
-        <script src="assets/vendor/material-design-kit.js"></script>
+        <script src="{% static '/vendor/material-design-kit.js'%}"></script>
 
         <!-- App JS -->
-        <script src="assets/js/app.js"></script>
+        <script src="{% static '/js/app.js'%}"></script>
 
         <!-- Highlight.js -->
-        <script src="assets/js/hljs.js"></script>
+        <script src="{% static '/js/hljs.js'%}"></script>
 
         <!-- Global Settings -->
-        <script src="assets/js/settings.js"></script>
+        <script src="{% static '/js/settings.js'%}"></script>
 
         <!-- Flatpickr -->
-        <script src="assets/vendor/flatpickr/flatpickr.min.js"></script>
-        <script src="assets/js/flatpickr.js"></script>
+        <script src="{% static '/vendor/flatpickr/flatpickr.min.js'%}"></script>
+        <script src="{% static '/js/flatpickr.js'%}"></script>
 
         <!-- Moment.js -->
-        <script src="assets/vendor/moment.min.js"></script>
-        <script src="assets/vendor/moment-range.js"></script>
+        <script src="{% static '/vendor/moment.min.js'%}"></script>
+        <script src="{% static '/vendor/moment-range.js'%}"></script>
 
         <!-- Chart.js -->
-        <script src="assets/vendor/Chart.min.js"></script>
-        <script src="assets/js/chartjs.js"></script>
+        <script src="{% static '/vendor/Chart.min.js'%}"></script>
+        <script src="{% static '/js/chartjs.js'%}"></script>
 
         <!-- Chart.js Samples -->
-        <script src="assets/js/page.analytics-dashboard.js"></script>
+        <script src="{% static '/js/page.analytics-dashboard.js'%}"></script>
 
         <!-- Vector Maps -->
-        <script src="assets/vendor/jqvmap/jquery.vmap.min.js"></script>
-        <script src="assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
-        <script src="assets/js/vector-maps.js"></script>
+        <script src="{% static '/vendor/jqvmap/jquery.vmap.min.js'%}"></script>
+        <script src="{% static '/vendor/jqvmap/maps/jquery.vmap.world.js'%}"></script>
+        <script src="{% static '/js/vector-maps.js'%}"></script>
 
         <!-- List.js -->
-        <script src="assets/vendor/list.min.js"></script>
-        <script src="assets/js/list.js"></script>
+        <script src="{% static '/vendor/list.min.js'%}"></script>
+        <script src="{% static '/js/list.js'%}"></script>
 
         <!-- Tables -->
-        <script src="assets/js/toggle-check-all.js"></script>
-        <script src="assets/js/check-selected-row.js"></script>
+        <script src="{% static '/js/toggle-check-all.js'%}"></script>
+        <script src="{% static '/js/check-selected-row.js'%}"></script>
 
         <!-- App Settings (safe to remove) -->
-        <script src="assets/js/app-settings.js"></script>
+        <script src="{% static '/js/app-settings.js'%}"></script>
     </body>
 
 </html>
