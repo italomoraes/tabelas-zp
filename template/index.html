@@ -1,280 +1,42 @@
+{% extends 'blank.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR"
-      dir="ltr">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible"
-              content="IE=edge">
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Dashboard</title>
-
-        <!-- Prevent the demo from appearing in search engines -->
-        <meta name="robots"
-              content="noindex">
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7COswald:300,400,500,700%7CRoboto:400,500%7CExo+2:600&display=swap"
-              rel="stylesheet">
-
-        <!-- Perfect Scrollbar -->
-        <link type="text/css"
-              href="{% static 'vendor/perfect-scrollbar.css'%}"
-              rel="stylesheet">
-
-        <!-- Material Design Icons -->
-        <link type="text/css"
-              href="{% static '/css/material-icons.css'%}"
-              rel="stylesheet">
-
-        <!-- Font Awesome Icons -->
-        <link type="text/css"
-              href="{% static '/css/fontawesome.css'%}"
-              rel="stylesheet">
-
-        <!-- Preloader -->
-        <link type="text/css"
-              href="{% static '/vendor/spinkit.css'%}"
-              rel="stylesheet">
-        <link type="text/css"
-              href="{% static '/css/preloader.css'%}"
-              rel="stylesheet">
-
-        <!-- App CSS -->
-        <link type="text/css"
-              href="{% static '/css/app.css'%}"
-              rel="stylesheet">
-
-        <!-- Dark Mode CSS (optional) -->
-        <link type="text/css"
-              href="{% static '/css/dark-mode.css'%}"
-              rel="stylesheet">
-
-        <!-- Vector Maps -->
-        <link type="text/css"
-              href="{% static '/vendor/jqvmap/jqvmap.min.css'%}"
-              rel="stylesheet">
-
-    </head>
-
-    <body class="layout-app layout-sticky-subnav ">
-
-        <div class="preloader">
-            <div class="sk-chase">
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-            </div>
-
-            <!-- <div class="sk-bounce">
-    <div class="sk-bounce-dot"></div>
-    <div class="sk-bounce-dot"></div>
-  </div> -->
-
-            <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+ {% block content %}
+        <div class="page-separator">
+            <div class="page-separator__text">Empreendimentos</div>
         </div>
 
-        <div class="mdk-drawer-layout js-mdk-drawer-layout"
-             data-push
-             data-responsive-width="992px">
-            <div class="mdk-drawer-layout__content page-content">
-
-                <div class="border-bottom-2 py-32pt position-relative z-1">
-                    <div class="container-fluid page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
-                        <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
-
-                            <div class="mb-24pt mb-sm-0 mr-sm-24pt">
-                                <h2 class="mb-0">Painel do Corretor</h2>
-
+        <div class="row card-group-row mb-lg-4pt">
+            <div class="col-xl-3 col-md-6 card-group-row__col">
+                <div class="card card-group-row__card">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <img src="{% static '/images/emp/fotoemp1.png'%}" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
+                        <div class="d-flex align-items-center">
+                            <div class="flex">
+                                <p class="mb-0"><strong>Cazeca</strong></p>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-
-                <div class="container-fluid page__container">
-                    <div class="page-section">
-
-                        <div class="page-separator">
-                            <div class="page-separator__text">Empreendimentos</div>
-                        </div>
-
-                        <div class="row card-group-row mb-lg-4pt">
-                            <div class="col-xl-3 col-md-6 card-group-row__col">
-                                <div class="card card-group-row__card">
-                                    <div class="card-body d-flex flex-column align-items-center">
-                                        <img src="{% static '/images/emp/fotoemp1.png'%}" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex">
-                                                <p class="mb-0"><strong>Cazeca</strong></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="page-separator">
-                            <div class="page-separator__text">Casas</div>
-                        </div>
-
-                        <div class="row card-group-row mb-lg-4pt">
-                            <div class="col-xl-3 col-md-6 card-group-row__col">
-                                <div class="card card-group-row__card">
-                                    <div class="card-body d-flex flex-column align-items-center">
-                                        <img src="{% static '/images/emp/fotoemp1.png'%}" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex">
-                                                <p class="mb-0"><strong>Cazeca</strong></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="js-fix-footer footer border-top-2">
-                    <div class="container-fluid page__container page-section d-flex flex-column">
-                        <p class="text-70 brand mb-24pt">
-                            <img class="brand-icon"
-                                 src="{% static '/images/logo/black-70@2x.png'%}"
-                                 width="30"
-                                 alt="Huma"> ZP Empreendimentos
-                        </p>
-                        <p class="measure-lead-max text-muted mb-0 small">A ZP Empreendimentos é uma empresa do Grupo Zambon Pacheco que atua no mercado da construção civil com foco em empreendimentos residenciais. Estabelecida desde 2002, com sede em Uberlândia, a empresa oferece casas e apartamentos de médio e alto padrão. Uma empresa que faz a diferença na vida de seus clientes e profissionais. Cada empreendimento é planejado cuidadosamente e sua execução busca sempre a solidez e segurança com o único objetivo de superar os padrões de qualidade para alcançar o imóvel dos sonhos.</p>
-                    </div>
-                </div>
-
-            </div>
-            <!-- // END drawer-layout__content -->
-
-            <!-- drawer -->
-            <div class="mdk-drawer js-mdk-drawer"
-                 id="default-drawer">
-                <div class="mdk-drawer__content">
-                    <div class="sidebar sidebar-dark sidebar-left"
-                         data-perfect-scrollbar>
-
-                        <a href="index.html"
-                           class="sidebar-brand ">
-                            <img class="sidebar-brand-icon"
-                                 src="{% static '/images/logo/accent-teal-100@2x.png'%}"
-                                 alt="Huma">
-                            <span>ZP Corretor</span>
-                        </a>
-
-                        <div class="sidebar-heading">Imóveis</div>
-                        <ul class="sidebar-menu">
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button"
-                                   data-toggle="collapse"
-                                   href="#dashboards_menu">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
-                                    Empreendimentos
-                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                                </a>
-                                <ul class="sidebar-submenu collapse sm-indent"
-                                    id="dashboards_menu">
-                                    <li class="sidebar-menu-item active">
-                                        <a class="sidebar-menu-button"
-                                           href="index.html">
-                                            <span class="sidebar-menu-text">Valentini</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <div class="sidebar-heading">Imóveis</div>
-                        <ul class="sidebar-menu">
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button js-sidebar-collapse"
-                                   data-toggle="collapse"
-                                   href="#enterprise_menu">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
-                                    Casas
-                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                                </a>
-                                <ul class="sidebar-submenu collapse sm-indent"
-                                    id="enterprise_menu">
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                           href="erp-dashboard.html">
-                                            <span class="sidebar-menu-text">Cyrella 1</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
-            <!-- // END drawer -->
         </div>
-        <!-- // END drawer-layout -->
 
-        <!-- jQuery -->
-        <script src="{% static '/vendor/jquery.min.js'%}"></script>
+        <div class="page-separator">
+            <div class="page-separator__text">Casas</div>
+        </div>
 
-        <!-- Bootstrap -->
-        <script src="{% static '/vendor/popper.min.js'%}"></script>
-        <script src="{% static '/vendor/bootstrap.min.js'%}"></script>
-
-        <!-- Perfect Scrollbar -->
-        <script src="{% static '/vendor/perfect-scrollbar.min.js'%}"></script>
-
-        <!-- DOM Factory -->
-        <script src="{% static '/vendor/dom-factory.js'%}"></script>
-
-        <!-- MDK -->
-        <script src="{% static '/vendor/material-design-kit.js'%}"></script>
-
-        <!-- App JS -->
-        <script src="{% static '/js/app.js'%}"></script>
-
-        <!-- Highlight.js -->
-        <script src="{% static '/js/hljs.js'%}"></script>
-
-        <!-- Global Settings -->
-        <script src="{% static '/js/settings.js'%}"></script>
-
-        <!-- Flatpickr -->
-        <script src="{% static '/vendor/flatpickr/flatpickr.min.js'%}"></script>
-        <script src="{% static '/js/flatpickr.js'%}"></script>
-
-        <!-- Moment.js -->
-        <script src="{% static '/vendor/moment.min.js'%}"></script>
-        <script src="{% static '/vendor/moment-range.js'%}"></script>
-
-        <!-- Chart.js -->
-        <script src="{% static '/vendor/Chart.min.js'%}"></script>
-        <script src="{% static '/js/chartjs.js'%}"></script>
-
-        <!-- Chart.js Samples -->
-        <script src="{% static '/js/page.analytics-dashboard.js'%}"></script>
-
-        <!-- Vector Maps -->
-        <script src="{% static '/vendor/jqvmap/jquery.vmap.min.js'%}"></script>
-        <script src="{% static '/vendor/jqvmap/maps/jquery.vmap.world.js'%}"></script>
-        <script src="{% static '/js/vector-maps.js'%}"></script>
-
-        <!-- List.js -->
-        <script src="{% static '/vendor/list.min.js'%}"></script>
-        <script src="{% static '/js/list.js'%}"></script>
-
-        <!-- Tables -->
-        <script src="{% static '/js/toggle-check-all.js'%}"></script>
-        <script src="{% static '/js/check-selected-row.js'%}"></script>
-
-        <!-- App Settings (safe to remove) -->
-        <script src="{% static '/js/app-settings.js'%}"></script>
-    </body>
-
-</html>
+        <div class="row card-group-row mb-lg-4pt">
+            <div class="col-xl-3 col-md-6 card-group-row__col">
+                <div class="card card-group-row__card">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <img src="{% static '/images/emp/fotoemp1.png'%}" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
+                        <div class="d-flex align-items-center">
+                            <div class="flex">
+                                <p class="mb-0"><strong>Cazeca</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
