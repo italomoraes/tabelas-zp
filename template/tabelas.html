@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Dashboard</title>
+
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots"
+              content="noindex">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7COswald:300,400,500,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+              rel="stylesheet">
+
+        <!-- Perfect Scrollbar -->
+        <link type="text/css"
+              href="assets/vendor/perfect-scrollbar.css"
+              rel="stylesheet">
+
+        <!-- Material Design Icons -->
+        <link type="text/css"
+              href="assets/css/material-icons.css"
+              rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link type="text/css"
+              href="assets/css/fontawesome.css"
+              rel="stylesheet">
+
+        <!-- Preloader -->
+        <link type="text/css"
+              href="assets/vendor/spinkit.css"
+              rel="stylesheet">
+        <link type="text/css"
+              href="assets/css/preloader.css"
+              rel="stylesheet">
+
+        <!-- App CSS -->
+        <link type="text/css"
+              href="assets/css/app.css"
+              rel="stylesheet">
+
+        <!-- Dark Mode CSS (optional) -->
+        <link type="text/css"
+              href="assets/css/dark-mode.css"
+              rel="stylesheet">
+
+        <!-- Vector Maps -->
+        <link type="text/css"
+              href="assets/vendor/jqvmap/jqvmap.min.css"
+              rel="stylesheet">
+
+    </head>
+
+    <body class="layout-app layout-sticky-subnav ">
+
+        <div class="preloader">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+            </div>
+
+            <!-- <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div> -->
+
+            <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+        </div>
+
+        <div class="mdk-drawer-layout js-mdk-drawer-layout"
+             data-push
+             data-responsive-width="992px">
+            <div class="mdk-drawer-layout__content page-content">
+
+                <div class="border-bottom-2 py-32pt position-relative z-1">
+                    <div class="container-fluid page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
+                        <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
+
+                            <div class="mb-24pt mb-sm-0 mr-sm-24pt">
+                                <h2 class="mb-0">Painel do Corretor - Cazeca</h2>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container-fluid page__container">
+                    <div class="page-section">
+
+                       <div class="page-separator">
+                        <div class="page-separator__text">Tabela de valores</div>
+                        </div>
+
+                        <div class="card mb-lg-32pt">
+
+                            <div class="table-responsive"
+                                 data-toggle="lists"
+                                 data-lists-sort-by="js-lists-values-from"
+                                 data-lists-sort-desc="true"
+                                 data-lists-values='["js-lists-values-name", "js-lists-values-status", "js-lists-values-policy", "js-lists-values-reason", "js-lists-values-days", "js-lists-values-available", "js-lists-values-from", "js-lists-values-to"]'>
+
+                                <table class="table mb-0 thead-border-top-0 table-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-name">Name</a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-status">Status</a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-policy">Policy</a>
+                                            </th>
+                                            <th style="width: 150px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-reason">Reason</a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-days">Days</a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-available">Available</a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-from">From</a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-to">To</a>
+                                            </th>
+                                            <th style="width: 24px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list"
+                                           id="leaves">
+
+                                        <tr>
+                                            <td>
+
+                                                <div class="media flex-nowrap align-items-center"
+                                                     style="white-space: nowrap;">
+                                                    <div class="avatar avatar-32pt mr-8pt">
+
+                                                        <span class="avatar-title rounded-circle">BN</span>
+
+                                                    </div>
+                                                    <div class="media-body">
+
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex d-flex flex-column">
+                                                                <p class="mb-0"><strong class="js-lists-values-name">Billy Nunez</strong></p>
+                                                                <small class="js-lists-values-email text-50">annabell.kris@yahoo.com</small>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div class="d-flex flex-column">
+                                                    <small class="js-lists-values-status text-50 mb-4pt">Pending</small>
+                                                    <span class="indicator-line rounded bg-warning"></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <small class="js-lists-values-policy text-50">Anual Leave</small>
+                                            </td>
+                                            <td>
+                                                <small class="js-lists-values-reason text-50">Family Vacation</small>
+                                            </td>
+                                            <td>
+                                                <small class="js-lists-values-days text-50">15 days</small>
+                                            </td>
+                                            <td>
+                                                <small class="js-lists-values-available text-50">22 days</small>
+                                            </td>
+                                            <td>
+                                                <small class="js-lists-values-from text-50">19/02/2019</small>
+                                            </td>
+                                            <td>
+                                                <small class="js-lists-values-to text-50">19/02/2019</small>
+                                            </td>
+                                            <td class="text-right">
+                                                <a href=""
+                                                   class="text-50"><i class="material-icons">more_vert</i></a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <div class="card-body bordet-top text-right">
+      15 <span class="text-50">of 1,430</span> <a href="#" class="text-50"><i class="material-icons ml-1">arrow_forward</i></a>
+    </div> -->
+
+                        </div>
+
+                        <div class="page-separator">
+                        <div class="page-separator__text">Mídias de Marketing</div>
+                        </div>
+
+                        <div class="row card-group-row mb-lg-4pt">
+                            <div class="col-xl-3 col-md-6 card-group-row__col">
+                                <div class="card card-group-row__card">
+                                    <div class="card-body d-flex flex-column align-items-center">
+                                        <img src="assets/images/emp/fotoemp1.png" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex">
+                                                <p class="mb-0"><strong>Cazeca</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="js-fix-footer footer border-top-2">
+                    <div class="container-fluid page__container page-section d-flex flex-column">
+                        <p class="text-70 brand mb-24pt">
+                            <img class="brand-icon"
+                                 src="assets/images/logo/black-70@2x.png"
+                                 width="30"
+                                 alt="Huma"> ZP Empreendimentos
+                        </p>
+                        <p class="measure-lead-max text-muted mb-0 small">A ZP Empreendimentos é uma empresa do Grupo Zambon Pacheco que atua no mercado da construção civil com foco em empreendimentos residenciais. Estabelecida desde 2002, com sede em Uberlândia, a empresa oferece casas e apartamentos de médio e alto padrão. Uma empresa que faz a diferença na vida de seus clientes e profissionais. Cada empreendimento é planejado cuidadosamente e sua execução busca sempre a solidez e segurança com o único objetivo de superar os padrões de qualidade para alcançar o imóvel dos sonhos.</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // END drawer-layout__content -->
+
+            <!-- drawer -->
+            <div class="mdk-drawer js-mdk-drawer"
+                 id="default-drawer">
+                <div class="mdk-drawer__content">
+                    <div class="sidebar sidebar-dark sidebar-left"
+                         data-perfect-scrollbar>
+
+                        <a href="index.html"
+                           class="sidebar-brand ">
+                            <img class="sidebar-brand-icon"
+                                 src="assets/images/logo/accent-teal-100@2x.png"
+                                 alt="Huma">
+                            <span>ZP Corretor</span>
+                        </a>
+
+                        <div class="sidebar-heading">Imóveis</div>
+                        <ul class="sidebar-menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   data-toggle="collapse"
+                                   href="#dashboards_menu">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                                    Empreendimentos
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu collapse sm-indent"
+                                    id="dashboards_menu">
+                                    <li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button"
+                                           href="index.html">
+                                            <span class="sidebar-menu-text">Valentini</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="sidebar-heading">Imóveis</div>
+                        <ul class="sidebar-menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button js-sidebar-collapse"
+                                   data-toggle="collapse"
+                                   href="#enterprise_menu">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                                    Casas
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu collapse sm-indent"
+                                    id="enterprise_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="erp-dashboard.html">
+                                            <span class="sidebar-menu-text">Cyrella 1</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // END drawer -->
+        </div>
+        <!-- // END drawer-layout -->
+
+        <!-- jQuery -->
+        <script src="assets/vendor/jquery.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="assets/vendor/popper.min.js"></script>
+        <script src="assets/vendor/bootstrap.min.js"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+
+        <!-- DOM Factory -->
+        <script src="assets/vendor/dom-factory.js"></script>
+
+        <!-- MDK -->
+        <script src="assets/vendor/material-design-kit.js"></script>
+
+        <!-- App JS -->
+        <script src="assets/js/app.js"></script>
+
+        <!-- Highlight.js -->
+        <script src="assets/js/hljs.js"></script>
+
+        <!-- Global Settings -->
+        <script src="assets/js/settings.js"></script>
+
+        <!-- Flatpickr -->
+        <script src="assets/vendor/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/js/flatpickr.js"></script>
+
+        <!-- Moment.js -->
+        <script src="assets/vendor/moment.min.js"></script>
+        <script src="assets/vendor/moment-range.js"></script>
+
+        <!-- Chart.js -->
+        <script src="assets/vendor/Chart.min.js"></script>
+        <script src="assets/js/chartjs.js"></script>
+
+        <!-- Chart.js Samples -->
+        <script src="assets/js/page.analytics-dashboard.js"></script>
+
+        <!-- Vector Maps -->
+        <script src="assets/vendor/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="assets/js/vector-maps.js"></script>
+
+        <!-- List.js -->
+        <script src="assets/vendor/list.min.js"></script>
+        <script src="assets/js/list.js"></script>
+
+        <!-- Tables -->
+        <script src="assets/js/toggle-check-all.js"></script>
+        <script src="assets/js/check-selected-row.js"></script>
+
+        <!-- App Settings (safe to remove) -->
+        <script src="assets/js/app-settings.js"></script>
+    </body>
+
+</html>
