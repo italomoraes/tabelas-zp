@@ -16,7 +16,7 @@ TIPO_MEDIA = [
 ESTAGIO_CASA = [
 	(1, 'Em Definição'),
 	(2, 'Em Construção'),
-	(3, 'Entregue')
+	(3, 'Pronta')
 ]
 
 # Create your models here.
@@ -36,15 +36,15 @@ class Unidade(models.Model):
 
 	numero = models.CharField(max_length=100)
 	metragem = models.IntegerField()
-	vaga = models.CharField(max_length=100)
+	vaga = models.CharField(max_length=100, null=True, blank=True)
 	tipo_de_vaga = models.IntegerField(
 		choices = SITUACAO_VAGA
-	)
-	sinal_na_assinatura_do_contrato = models.DecimalField(max_digits=20, decimal_places=2)
-	restante_da_entrada = models.DecimalField(max_digits=20, decimal_places=2)
-	boxe = models.CharField(max_length=100)
-	valor = models.DecimalField(max_digits=20, decimal_places=2)
-	valor_promocional = models.DecimalField(max_digits=20, decimal_places=2)
+	, null=True, blank=True)
+	sinal_na_assinatura_do_contrato = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+	restante_da_entrada = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+	boxe = models.CharField(max_length=100, null=True, blank=True)
+	valor = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+	valor_promocional = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
 	vendida = models.BooleanField(default=False)
 	empreendimento = models.ForeignKey(Empreendimento, on_delete=models.CASCADE)
 
@@ -55,6 +55,7 @@ class Unidade(models.Model):
 class MidiaEmpreendimento(models.Model):
 
 	empreendimento = models.ForeignKey(Empreendimento, on_delete=models.CASCADE)
+	nome = models.CharField(max_length=100)
 	tipo = models.IntegerField(
 		choices = TIPO_MEDIA
 	)
@@ -70,7 +71,7 @@ class Casa(models.Model):
 		choices = ESTAGIO_CASA
 	)
 	icone = models.ImageField(upload_to='casas/icones/')
-	data_de_entrega = models.DateField(auto_now=False)
+	entrega = models.DateField(auto_now=False)
 	metragem_do_terreno = models.DecimalField(max_digits=20, decimal_places=2)
 	metragem_da_casa = models.DecimalField(max_digits=20, decimal_places=2)
 	condominio = models.CharField(max_length=200)
@@ -84,6 +85,7 @@ class Casa(models.Model):
 
 class MidiaCasa(models.Model):
 
+	nome = models.CharField(max_length=200)
 	casa = models.ForeignKey(Casa, on_delete=models.CASCADE)
 	tipo = models.IntegerField(
 		choices = TIPO_MEDIA

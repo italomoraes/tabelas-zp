@@ -1,14 +1,22 @@
 {% extends 'blank.html' %}
+{% load humanize %}
 {% load static %}
 
  {% block content %}
+
+                        <div class="page-separator">
+                        <div class="page-separator__text">Detalhes</div>
+                        </div>
+
+                        <p class="card-subtitle text-70 mb-16pt mb-lg-8">Endereço: <b>{{imovel.endereco}}</b></p>
+                        <p class="card-subtitle text-70 mb-16pt mb-lg-8">Entrega: <b>{{imovel.entrega}}</b></p>
+                        <p class="card-subtitle text-70 mb-16pt mb-lg-8">Observações: <b>{{imovel.comentarios}}</b></p>
 
                        <div class="page-separator">
                         <div class="page-separator__text">Tabela de valores</div>
                         </div>
 
                         <div class="card mb-lg-32pt">
-
                             <div class="table-responsive"
                                  data-toggle="lists"
                                  data-lists-sort-by="js-lists-values-from"
@@ -18,106 +26,128 @@
                                 <table class="table mb-0 thead-border-top-0 table-nowrap">
                                     <thead>
                                         <tr>
-                                            <th>
+                                            <th style="width: 48px;">
                                                 <a href="javascript:void(0)"
                                                    class="sort"
-                                                   data-sort="js-lists-values-name">Name</a>
+                                                   data-sort="js-lists-values-to">
+                                                   Número
+                                                 </a>
                                             </th>
                                             <th style="width: 48px;">
                                                 <a href="javascript:void(0)"
                                                    class="sort"
-                                                   data-sort="js-lists-values-status">Status</a>
+                                                   data-sort="js-lists-values-to">
+                                                   Vendida
+                                                 </a>
                                             </th>
                                             <th style="width: 48px;">
                                                 <a href="javascript:void(0)"
                                                    class="sort"
-                                                   data-sort="js-lists-values-policy">Policy</a>
-                                            </th>
-                                            <th style="width: 150px;">
-                                                <a href="javascript:void(0)"
-                                                   class="sort"
-                                                   data-sort="js-lists-values-reason">Reason</a>
+                                                   data-sort="js-lists-values-to">
+                                                   Metragem
+                                                 </a>
                                             </th>
                                             <th style="width: 48px;">
                                                 <a href="javascript:void(0)"
                                                    class="sort"
-                                                   data-sort="js-lists-values-days">Days</a>
+                                                   data-sort="js-lists-values-to">
+                                                   Vaga
+                                                 </a>
                                             </th>
                                             <th style="width: 48px;">
                                                 <a href="javascript:void(0)"
                                                    class="sort"
-                                                   data-sort="js-lists-values-available">Available</a>
+                                                   data-sort="js-lists-values-to">
+                                                   Tipo de Vaga
+                                                 </a>
+                                            </th>
+                                            <th style="width: 10px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-to">
+                                                   Sinal na Assinatura do Contrato
+                                                 </a>
                                             </th>
                                             <th style="width: 48px;">
                                                 <a href="javascript:void(0)"
                                                    class="sort"
-                                                   data-sort="js-lists-values-from">From</a>
+                                                   data-sort="js-lists-values-to">
+                                                   Restante da Entrada
+                                                 </a>
                                             </th>
                                             <th style="width: 48px;">
                                                 <a href="javascript:void(0)"
                                                    class="sort"
-                                                   data-sort="js-lists-values-to">To</a>
+                                                   data-sort="js-lists-values-to">
+                                                   Boxe
+                                                 </a>
                                             </th>
-                                            <th style="width: 24px;"></th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-to">
+                                                   Valor
+                                                 </a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-to">
+                                                   Valor Promocional
+                                                 </a>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody class="list"
                                            id="leaves">
-
-                                        <tr>
+                                        {% for unidade in unidades %}
+                                          <tr>
                                             <td>
-
-                                                <div class="media flex-nowrap align-items-center"
-                                                     style="white-space: nowrap;">
-                                                    <div class="avatar avatar-32pt mr-8pt">
-
-                                                        <span class="avatar-title rounded-circle">BN</span>
-
-                                                    </div>
-                                                    <div class="media-body">
-
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex d-flex flex-column">
-                                                                <p class="mb-0"><strong class="js-lists-values-name">Billy Nunez</strong></p>
-                                                                <small class="js-lists-values-email text-50">annabell.kris@yahoo.com</small>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
+                                              
+                                                <small class="js-lists-values-policy text-50">{{unidade.numero}}</small>
                                             </td>
                                             <td>
-                                                <div class="d-flex flex-column">
-                                                    <small class="js-lists-values-status text-50 mb-4pt">Pending</small>
-                                                    <span class="indicator-line rounded bg-warning"></span>
-                                                </div>
+                                              
+                                                <small class="js-lists-values-policy text-50">{{ unidade.vendida|yesno:"Vendida, Disponível"}}</small>
+                                            </td>
+                                            {% if unidade.vendida == True %}
+                                              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                            {% else %}
+                                            <td>
+                                              
+                                                <small class="js-lists-values-policy text-50">{{unidade.metragem}} m²</small>
                                             </td>
                                             <td>
-                                                <small class="js-lists-values-policy text-50">Anual Leave</small>
+                                              
+                                                <small class="js-lists-values-policy text-50">{{unidade.vaga}}</small>
                                             </td>
                                             <td>
-                                                <small class="js-lists-values-reason text-50">Family Vacation</small>
+                                              
+                                                <small class="js-lists-values-policy text-50">{{unidade.get_tipo_de_vaga_display}}</small>
                                             </td>
                                             <td>
-                                                <small class="js-lists-values-days text-50">15 days</small>
+                                              
+                                                <small class="js-lists-values-policy text-50">R$ {{unidade.sinal_na_assinatura_do_contrato|intcomma}}</small>
                                             </td>
                                             <td>
-                                                <small class="js-lists-values-available text-50">22 days</small>
+                                              
+                                                <small class="js-lists-values-policy text-50">R$ {{unidade.restante_da_entrada|intcomma}}</small>
                                             </td>
                                             <td>
-                                                <small class="js-lists-values-from text-50">19/02/2019</small>
+                                              
+                                                <small class="js-lists-values-policy text-50">{{unidade.boxe}}</small>
                                             </td>
                                             <td>
-                                                <small class="js-lists-values-to text-50">19/02/2019</small>
+                                              
+                                                <small class="js-lists-values-policy text-50">R$ {{unidade.valor|intcomma}}</small>
                                             </td>
-                                            <td class="text-right">
-                                                <a href=""
-                                                   class="text-50"><i class="material-icons">more_vert</i></a>
+                                            <td>
+                                              
+                                                <small class="js-lists-values-policy text-50">R$ {% if unidade.valor_promocional %}{{ unidade.valor_promocional|intcomma }} {% else %}{{unidade.valor|intcomma}}{% endif %}</small>
                                             </td>
+                                            {% endif %}
                                         </tr>
-
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -131,20 +161,133 @@
                         <div class="page-separator__text">Mídias de Marketing</div>
                         </div>
 
-                        <div class="row card-group-row mb-lg-4pt">
-                            <div class="col-xl-3 col-md-6 card-group-row__col">
-                                <div class="card card-group-row__card">
-                                    <div class="card-body d-flex flex-column align-items-center">
-                                        <img src="assets/images/emp/fotoemp1.png" style="width: 100%;margin-bottom: 1em;box-shadow: 0 3px 3px -2px rgba(39,44,51,.1),0 3px 4px 0 rgba(39,44,51,.04),0 1px 8px 0 rgba(39,44,51,.02);}">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex">
-                                                <p class="mb-0"><strong>Cazeca</strong></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                        <div class="card mb-lg-32pt">
+                            <div class="table-responsive"
+                                 data-toggle="lists"
+                                 data-lists-sort-by="js-lists-values-from"
+                                 data-lists-sort-desc="true"
+                                 data-lists-values='["js-lists-values-name", "js-lists-values-status", "js-lists-values-policy", "js-lists-values-reason", "js-lists-values-days", "js-lists-values-available", "js-lists-values-from", "js-lists-values-to"]'>
+
+                                <table class="table mb-0 thead-border-top-0 table-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-to">
+                                                   Nome
+                                                 </a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-to">
+                                                   Tipo
+                                                 </a>
+                                            </th>
+                                            <th style="width: 48px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-to">
+                                                   Link
+                                                 </a>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list"
+                                           id="leaves">
+
+                                            {% for midia in midias %}
+                                {% if midia.tipo == 1 or midia.tipo == 3 %}
+                                <tr>
+                                  <td>    
+                                      <small class="js-lists-values-policy text-50">{{midia.nome}}</small>
+                                  </td>
+                                  <td>    
+                                      <small class="js-lists-values-policy text-50">{{midia.get_tipo_display}}</small>
+                                  </td>
+                                  <td>
+                                    <small class="js-lists-values-policy text-50"><a href="{%firstof midia.link%}"><button type="button" class="btn btn-accent">Acessar</button></a></small>
+                                  </td>
+                                </tr>
+                                {% elif midia.tipo == 2 or midia.tipo == 4%}
+                                <tr>
+                                  <td>    
+                                      <small class="js-lists-values-policy text-50">{{midia.nome}}</small>
+                                  </td>
+                                  <td>    
+                                      <small class="js-lists-values-policy text-50">{{midia.get_tipo_display}}</small>
+                                  </td>
+                                  <td>    
+                                      <small class="js-lists-values-policy text-50"><a href="{%firstof midia.arquivo.url%}"><button type="button" class="btn btn-accent">Baixar</button></a></small>
+                                  </td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+
+                                            
+
+                                    </tbody>
+                                </table>
                             </div>
+                            <!-- <div class="card-body bordet-top text-right">
+      15 <span class="text-50">of 1,430</span> <a href="#" class="text-50"><i class="material-icons ml-1">arrow_forward</i></a>
+    </div> -->
+
                         </div>
 
+{% endblock %}
 
+{% block title %} {{imovel}} {% endblock %}
+
+{% block sidebar %}
+    <div class="sidebar-heading">Imóveis</div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-menu-item">
+                <a class="sidebar-menu-button"
+                   data-toggle="collapse"
+                   href="#dashboards_menu">
+                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                    Empreendimentos
+                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                </a>
+                <ul class="sidebar-submenu collapse sm-indent"
+                    id="dashboards_menu">
+                    {% for empreendimento in empreendimentos %}
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button"
+                           href="/empreendimento/{{empreendimento.id}}/">
+                            <span class="sidebar-menu-text">{{empreendimento.nome}}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+
+        <div class="sidebar-heading">Imóveis</div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-menu-item">
+                <a class="sidebar-menu-button js-sidebar-collapse"
+                   data-toggle="collapse"
+                   href="#enterprise_menu">
+                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                    Casas
+                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                </a>
+                <ul class="sidebar-submenu collapse sm-indent"
+                    id="enterprise_menu">
+                    {% for casa in casas %}
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button"
+                           href="/casa/{{casa.id}}/">
+                            <span class="sidebar-menu-text">{{casa.nome}}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

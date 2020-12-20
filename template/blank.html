@@ -88,7 +88,7 @@
                         <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
 
                             <div class="mb-24pt mb-sm-0 mr-sm-24pt">
-                                <h2 class="mb-0">Painel do Corretor</h2>
+                                <h2 class="mb-0">{% block title %} Painel do Corretor {% endblock %}</h2>
 
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                     <div class="sidebar sidebar-dark sidebar-left"
                          data-perfect-scrollbar>
 
-                        <a href="index.html"
+                        <a href="/"
                            class="sidebar-brand ">
                             <img class="sidebar-brand-icon"
                                  src="{% static '/images/logo/accent-teal-100@2x.png'%}"
@@ -135,50 +135,8 @@
                             <span>ZP Corretor</span>
                         </a>
 
-                        <div class="sidebar-heading">Imóveis</div>
-                        <ul class="sidebar-menu">
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button"
-                                   data-toggle="collapse"
-                                   href="#dashboards_menu">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
-                                    Empreendimentos
-                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                                </a>
-                                <ul class="sidebar-submenu collapse sm-indent"
-                                    id="dashboards_menu">
-                                    <li class="sidebar-menu-item active">
-                                        <a class="sidebar-menu-button"
-                                           href="index.html">
-                                            <span class="sidebar-menu-text">Valentini</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <div class="sidebar-heading">Imóveis</div>
-                        <ul class="sidebar-menu">
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button js-sidebar-collapse"
-                                   data-toggle="collapse"
-                                   href="#enterprise_menu">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
-                                    Casas
-                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                                </a>
-                                <ul class="sidebar-submenu collapse sm-indent"
-                                    id="enterprise_menu">
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                           href="erp-dashboard.html">
-                                            <span class="sidebar-menu-text">Cyrella 1</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                        {% block sidebar %}
+                        {% endblock %}
                 </div>
             </div>
             <!-- // END drawer -->
